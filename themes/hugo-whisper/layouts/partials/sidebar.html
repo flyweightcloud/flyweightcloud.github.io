@@ -1,0 +1,19 @@
+{{$currentNode := .}}
+<div class="docs-menu">
+  {{ $sectionLen := len (where .Site.RegularPages "Section" .Section) }}
+  {{ if .Section }}
+    <h4>{{ .Section | humanize }}</h4>
+    <ul>
+      {{ range where .Site.RegularPages "Section" .Section }}
+      <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active {{ end }}">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ if and (eq $sectionLen 0) (.TableOfContents) }}
+    {{ .TableOfContents }}
+  {{ end }}
+  
+</div>

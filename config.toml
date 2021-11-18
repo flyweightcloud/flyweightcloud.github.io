@@ -1,0 +1,14 @@
+baseURL = 'http://flyweightcloud.github.io'
+languageCode = 'en-us'
+title = 'Flyweight.Cloud'
+
+theme = "hugo-whisper"
+
+[[menu.main]]
+name = "Github"
+url = "https://github.com/flyweightcloud"
+weight = 1
+
+[params.logo]
+mobile = "/images/favicon/android-chrome-192x192.png"
+standard = "/images/favicon/android-chrome-192x192.png"
